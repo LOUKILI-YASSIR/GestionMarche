@@ -1,0 +1,18 @@
+<odoo>
+    <!-- Menu Principal -->
+    <menuitem id="main_market_menu" name="Gestion du Marché"/>
+
+    <!-- Sous-menu Entreprises -->
+    <menuitem 
+        id="market_company_menu" 
+        name="Entreprises" 
+        parent="main_market_menu" 
+        action="market_management.action_market_company"/>
+
+    <!-- Sous-menu Activités -->
+    <menuitem 
+        id="market_activity_menu" 
+        name="Activités" 
+        parent="main_market_menu" 
+        action="market_management.action_market_activity"/>
+</odoo>
