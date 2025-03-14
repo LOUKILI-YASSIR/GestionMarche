@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_market_company,market.company,model_market_company,base.group_user,1,1,1,1
-access_market_activity,market.activity,model_market_activity,base.group_user,1,1,1,1
