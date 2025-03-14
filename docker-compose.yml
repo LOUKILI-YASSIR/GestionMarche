@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: yonetwork_odoo_db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: dev11
+      POSTGRES_DB: odoo
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    restart: always
+
+  odoo:
+    build: .
+    container_name: odoo18_YonetWork
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - ./odoo-18:/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+    restart: always
+
+volumes:
+  odoo-db-data:
